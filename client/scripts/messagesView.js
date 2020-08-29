@@ -4,7 +4,10 @@ var MessagesView = {
 
   initialize: function() {
     // MessagesView.$chats.load(MessagesView.render);
-
+    $('.username').on( 'click', function() {
+      Friends.toggleStatus();
+    });
+    $('.username').trigger('click');
   },
 
   render: function() {
@@ -13,8 +16,9 @@ var MessagesView = {
   },
 
   renderMessage: function(message) {
-    MessagesView.$chats.append(`<div>${message}</div>`);
-  }
+    MessagesView.$chats.append(`<div><h3 class="username">${message.username}</h3><br>
+    <div>${message.text}</div></div>`);
+  },
 
 };
 
