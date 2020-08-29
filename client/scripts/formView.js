@@ -7,9 +7,15 @@ var FormView = {
   },
 
   handleSubmit: function(event) {
+    // takes in the submission and puts the different inputs into the correct spots in messages and then sends it into Parse
+
+
+
+
+
     // Stop the browser from submitting the form
     event.preventDefault();
-    
+
     console.log('click!');
   },
 
