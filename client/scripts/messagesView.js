@@ -11,9 +11,12 @@ var MessagesView = {
   },
 
   render: function() {
-    //is our object
-    //run messageView.render on each message?
+    _.each(Messages, (message) => {
+      var $currentMessage = MessageView.render(message);
+      MessagesView.$chats.append($currentMessage);
+    });
   },
+
 
   renderMessage: function(message) {
     MessagesView.$chats.append(`<div><h3 class="username">${message.username}</h3><br>

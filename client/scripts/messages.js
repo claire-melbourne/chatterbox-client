@@ -1,7 +1,13 @@
 var Messages = {
-//big object that has a lot of objects
+//Messages.results includes all the messages from fetch in an array
+
 
 };
+
+//access results array and iterate through it up to 10ish
+//run the messageView.render on each of them
+
+
 
 // var message = {
 //   username: this.username,

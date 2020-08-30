@@ -1,20 +1,22 @@
 var FormView = {
 
   $form: $('form'),
-  // this links the submit button to the handleSubmit function
   initialize: function() {
     FormView.$form.on('submit', FormView.handleSubmit);
   },
 
   handleSubmit: function(event) {
-    //Parse.create();
-
-    // Stop the browser from submitting the form
     event.preventDefault();
+    var message = {
+      roomname: 'lobby',
+      text: FormView.$form.find('#message').val(),
+      username: App.username
+    };
 
-    console.log('click!');
-
-
+    Parse.create(message, () => {
+      Messages.unshift(message);
+    });
+    window.location.reload();
   },
 
   setStatus: function(active) {
