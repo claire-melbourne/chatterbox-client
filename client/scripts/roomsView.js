@@ -9,7 +9,9 @@ var RoomsView = {
     });
   },
 
-  render: _.template(`<option><%- roomname %></option>`),
+  render: _.template(`
+  <option><%- roomname %></option>
+  `),
 
   renderRoom: function(roomname) {
     RoomsView.$select.append(RoomsView.render(roomname));
