@@ -9,13 +9,11 @@ var RoomsView = {
     });
   },
 
-  render: function() {
-  },
+  render: _.template(`<option><%- roomname %></option>`),
 
-  renderRoom: function(room) {
-    RoomsView.$select.append(`<option>${room}</option>`);
+  renderRoom: function(roomname) {
+    RoomsView.$select.append(RoomsView.render(roomname));
   }
 
 };
-//make a template to go into select:
-//<option value='Room1'></option>
+
